@@ -1,0 +1,15 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Datasource local storage ignored files
+/../../../../../../../../../:\Users\Mubi\Documents\Uni\8. Semester\Software Quality Testing\course4\.idea/dataSources/
+/../../../../../../../../../:\Users\Mubi\Documents\Uni\8. Semester\Software Quality Testing\course4\out
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+#ignore all files that end on .class
+*.class
+/out
+/*/.idea
+/.idea
+*.iml
