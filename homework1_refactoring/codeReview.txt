@@ -1,0 +1,35 @@
+Code review
+
+1. Code structure & naming conventions
+X Package Name is too generic and lacking modules
+X Variable and method names should ALL be camelCase
+X Clean code rules for spaces are not regarded
+X Some method names do not describe their functionality properly
+    X name of to_string doesn't override of the standard method
+X Inconsistent use of this
+X Constructor should follow right after the declaration of the variables
+X Useless variable
+X Placement of curly brackets is inconsistent
+X Comments are unnecessary in refactored code bc the methods fulfil their desired functionality and are descriptive enough
+X Variable names are not descriptive enough in some cases (eg. rate/ value)
+X Some of the lines were longer than they should be
+
+2. Implementation
+X Broker's fee should be modifiable in another place
+X The standard values for the Account should be defined in an enum
+X Exception for setValue should express more clearly what the error is
+X To ensure that method getMonthlyRate exists in all classes an interface/ inheritance should be used
+X The variables are public with get and set methods. Better to make them private
+X daysActive is never assigned
+X Methode print() is useless, bc I can find out anytime what type an object is (YAGNI)
+
+3. Single Responsibility
+X Simplify the method calculate by splitting it up into two functions
+
+
+
+Optional:
+- STANDARD/ BUDGET are not used at all in this class (maybe they will be used for other applications)
+
+
+
