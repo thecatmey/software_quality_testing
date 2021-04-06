@@ -1,0 +1,4 @@
+2. In order to allow other companies or players to develop external solutions that connect to the game, a library (an API) must be developed.
+- The API contains many classes with many details
+- not all classes are documented
+- The API should provide a simplified interface for a set of basic functions
