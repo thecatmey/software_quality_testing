@@ -1,35 +1,66 @@
 Code review
 
-1. Code structure & naming conventions
+Meaningful Names:
 X Package Name is too generic and lacking modules
-X Variable and method names should ALL be camelCase
-X Clean code rules for spaces are not regarded
+	Add modules and change name to the name of the exercise (homework1)
 X Some method names do not describe their functionality properly
-    X name of to_string doesn't override of the standard method
-X Inconsistent use of this
-X Constructor should follow right after the declaration of the variables
-X Useless variable
-X Placement of curly brackets is inconsistent
-X Comments are unnecessary in refactored code bc the methods fulfil their desired functionality and are descriptive enough
+	Use names that follow naming conventions and properly convey the functionality of the method    
 X Variable names are not descriptive enough in some cases (eg. rate/ value)
+	Replace the variable names with more descriptive ones
+
+Functions:
+X Method calculalte is too generic and fullfils to tasks (calculating interest and calculating broker's fee)
+	Simplify the method calculate by splitting it up into two functions and adding a third one that combines the two
+
+Formatting:
+X Variable and method names should ALL be camelCase
+	Correct all the names
+X Clean code rules for spaces are not regarded
+	Correct all the spaces
+X Placement of curly brackets is inconsistent
+	Unify the placement of curly brackets
+X Constructor should follow right after the declaration of the variables
+	Place the constructor at the beginning of the class
 X Some of the lines were longer than they should be
+	Split up lines that are too long
+X Inconsistent use of this
+	Add this. for all the necessary variables to make it more obvious when the object variable is used
 
-2. Implementation
-X Broker's fee should be modifiable in another place
-X The standard values for the Account should be defined in an enum
-X Exception for setValue should express more clearly what the error is
+Comments: 
+X Comments are unnecessary in refactored code bc the methods fulfil their desired functionality and are descriptive enough
+	Instead of explaining the calculate method with a comment, it got a descriptive name
 X To ensure that method getMonthlyRate exists in all classes an interface/ inheritance should be used
-X The variables are public with get and set methods. Better to make them private
-X daysActive is never assigned
+	Instead of the comment, the interface automatically forces devs to implement the method
+Exceptions:
+X Exception for setValue should express more clearly what the error is
+	Include a new Exception InvalidValueException
+
+Classes and Interfaces:
+X The variables are public with get and set methods
+	Make the variables private
+X Broker's fee should be modifiable in another place
+	Define a default value in the object and then implement a setter method in order to adapt the fee if needed
+
+General Programming:
+X Name of to_string doesn't override of the standard method (incorrectly written)
+	Write the method name according to convention
+X Useless variable
+	Delete useless variables
 X Methode print() is useless, bc I can find out anytime what type an object is (YAGNI)
+	Delete the method
+X daysActive is never assigned
+	Assign a value for daysActive and provide a setter to change the value 
+	(Additionally a counter to count the days since the activation of the account could be added)
 
-3. Single Responsibility
-X Simplify the method calculate by splitting it up into two functions
-
+Enums and Annotations
+X Standard variables should be avoided 
+	The standard values for the Account should be defined in an enum
 
 
 Optional:
 - STANDARD/ BUDGET are not used at all in this class (maybe they will be used for other applications)
+	Normally I would delete values that won't be used. However, as STANDARD and BUDGET are now enumerates they might be needed in other applications.
+	In that case I would check for other dependencies on the enums before deleting
 
 
 
