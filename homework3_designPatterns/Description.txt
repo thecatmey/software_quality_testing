@@ -1,0 +1,18 @@
+I did not have a bachelor topic where I could apply design patterns, therefore I came up with the following scenario:
+A pizza shop wants to structure their menu. They also want to be able to adapt their pizzas whenever they want.
+I used the Composite pattern to allow for a hierarchical structuring of the menu and
+the Decorator pattern to allow changes to the pizza topics whenever (aka also during runtime).
+
+Advantages of using Composite and Decorator
+- It is possible to hierarchical sort the menu by dish type (appetizer, main dish and dessert) and therefore keep a sorted overview over all menu items
+    -> Additionally, it is also easy to adapt the menu and add new dishes or remove old ones
+- The decorator pattern allows individual changes to a basic pizza whenever needed and calculates the price of the newly created pizza
+- The Dish class guarantees that all dishes on the menu have to provide information about name, description and whether or not the dish is vegetarian
+    -> makes implementation of new dishes easier
+
+Disadvantages of using Composite and Decorator
+- With the use of Decorator is was hard to implement the pizza objects into the hierarchical order of the Composite pattern
+    -> The classes look very similar and are already inheriting characteristics from an abstract class
+- Bigger changes in the hierarchy of the menu would lead to a lot of changes in Group objects
+    -> hard to manage with the indexes
+- Dependencies between the composite and the decorator packages
