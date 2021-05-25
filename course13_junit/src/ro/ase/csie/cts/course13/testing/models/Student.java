@@ -1,4 +1,5 @@
 package ro.ase.csie.cts.course13.testing.models;
+import org.junit.Test;
 import ro.ase.csie.cts.course13.testing.exceptions.WrongAgeException;
 import ro.ase.csie.cts.course13.testing.exceptions.WrongGradeException;
 import ro.ase.csie.cts.course13.testing.exceptions.WrongNameException;
@@ -34,7 +35,12 @@ public class Student {
 
 
 	public void setName(String name) throws WrongNameException{
-		this.name = name;
+		if(name.length()< MIN_NAME_SIZE || name.length() > MAX_NAME_SIZE){
+			throw new WrongNameException();
+		} else {
+			this.name = name;
+		}
+
 	}
 
 
@@ -44,7 +50,12 @@ public class Student {
 
 
 	public void setAge(int age) throws WrongAgeException{
-		this.age = age;
+		if(age < MIN_AGE || age > MAX_AGE){
+			throw new WrongAgeException();
+		} else{
+			this.age = age;
+		}
+
 	}
 
 
@@ -70,5 +81,22 @@ public class Student {
 		return sum/this.grades.size();
 		
 	}
+
+	public int getMinGrade(){
+
+		if(this.grades.size() == 0){
+			return 0;
+		}
+
+		int min = this.grades.get(0);
+		for(int grade: this.grades){
+			if(min > grade){
+				min = grade;
+			}
+		}
+		return min;
+	}
+
+
 	
 }
